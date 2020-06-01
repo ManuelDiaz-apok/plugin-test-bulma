@@ -4,13 +4,46 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "create": "apok-admin-create"
   },
   "dependencies": {
-    "vue": "^2.6.11"
+    "@apok/admin": "file:../plugin_nuevo/apok-admin",
+    "@apok/admin-components-bulma": "file:../plugin_nuevo/apok-admin-components-bulma",
+    "@apok/vue-cli-plugin-apok-admin": "file:../plugin_nuevo/vue-cli-plugin-apok-admin",
+    "@fortawesome/fontawesome-svg-core": "^1.2.18",
+    "@fortawesome/free-regular-svg-icons": "^5.8.2",
+    "@fortawesome/free-solid-svg-icons": "^5.8.2",
+    "@fortawesome/vue-fontawesome": "^0.1.6",
+    "@mdi/font": "^3.6.95",
+    "apollo-boost": "^0.3.1",
+    "apollo-cache-inmemory": "^1.5.1",
+    "apollo-client": "^2.5.1",
+    "apollo-link-error": "^1.1.10",
+    "apollo-link-http": "^1.5.14",
+    "bulma": "^0.8.2",
+    "core-js": "^3.6.4",
+    "graphql": "^14.3.0",
+    "graphql-tag": "^2.10.1",
+    "js-cookie": "^2.2.0",
+    "lodash.camelcase": "^4.3.0",
+    "lodash.clonedeep": "^4.5.0",
+    "moment": "^2.24.0",
+    "register-service-worker": "^1.6.2",
+    "vue": "^2.6.11",
+    "vue-resource": "^1.5.1",
+    "vue-router": "^3.0.3",
+    "vuex": "^3.0.1",
+    "vuex-i18n": "^1.11.0"
   },
   "devDependencies": {
+    "@vue/cli-plugin-unit-jest": "^4.2.3",
     "@vue/cli-service": "~4.3.0",
+    "@vue/test-utils": "1.0.0-beta.31",
+    "node-sass": "^4.9.0",
+    "postcss-import": "^12.0.1",
+    "sass-loader": "^7.1.0",
+    "snowpack": "^2.1.1",
     "vue-template-compiler": "^2.6.11"
   }
 }
