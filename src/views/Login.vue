@@ -4,13 +4,12 @@
             <div class="card">
                 <div class="card-content">
                     <form-renderer
-                            buttons-alignment="left"
+                            buttons-alignment="centered"
                             :fields="formFields"
                             :form-var="user"
                             :show-cancel="false"
                             submit-button-text="Login"
-                            :submit-button-icon= "{icon: 'arrow-circle-right'}"
-                            submitButtonVariant="is-link"
+                            :submit-button-icon="{icon: 'arrow-circle-right'}"
                             :loading="loading"
                             @submit="doSubmit"
                     />

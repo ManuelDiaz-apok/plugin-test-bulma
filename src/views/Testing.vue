@@ -59,6 +59,7 @@
             }
             .card-content {
                 padding: 1em;
+                width: 100%;
             }
             & > .field {
                 width: 100%;

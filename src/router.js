@@ -26,7 +26,7 @@ const router = new Router({
         {
             path: "/auth/login",
             name: "Login",
-            component: () => import(/* webpackChunkName: "login" */ "./views/Testing")
+            component: () => import(/* webpackChunkName: "login" */ "./views/Login")
         },
         {
             path: "/admin",

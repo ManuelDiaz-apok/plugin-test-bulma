@@ -12,20 +12,21 @@ import {executeVuexRequest} from '@/tests/unit/networkFunctions'
  * @param user.password {String} - User's password for log in
  */
 export const doLogin = (context, { username, password }) => {
-  const loginData = {
-    email: username,
-    password,
-    grant_type: 'password',
-    client_id: constants.CLIENT_ID,
-    client_secret: constants.CLIENT_SECRET,
-  };
+    const loginData = {
+        email: username,
+        password,
+        grant_type: 'password',
+        client_id: constants.CLIENT_ID,
+        client_secret: constants.CLIENT_SECRET,
+    };
+
   executeVuexRequest(context, LOGIN_USER, 'login', loginData, 'post')
      .then(response => {
        Cookies.set(constants.SESSION_COOKIE, response.access_token);
        context.dispatch('getUser');
      })
      .catch(error => {
-       if (error.status === 401) {
+         if (error.status === 401) {
          context.dispatch('messages/setFields', { username: error.body.message }, { root: true });
        }
      });

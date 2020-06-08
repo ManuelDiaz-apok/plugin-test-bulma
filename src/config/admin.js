@@ -1,10 +1,6 @@
-// import Vue from "vue";
-// import constants from "./constants";
-//
-// /**
-//  *Placeholders to be replaced with REST configuration and GraphQL configuration
-//  */
-// REST_CONFIG
-// GRAPHQL_CONFIG
-//
-//
+import Vue from 'vue'
+import NetworkRestPlugin from "@apok/admin/vue/plugins/network/rest/NetworkRestPlugin";
+
+Vue.use(NetworkRestPlugin, {
+    baseURL: 'http://localhost:8080/',
+});

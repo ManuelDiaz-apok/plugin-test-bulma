@@ -2,9 +2,9 @@
   <div class="container">
     <div class="cell">
       <h1>404</h1>
-      <p>This isn't the page you're looking for</p><br/>
+      <p>This isn't the page you're looking for</p>
       <p>
-        <button-renderer @click="goBack" type="is-link" icon="chevron-left">Go Back</button-renderer>
+        <button-renderer @click="goBack" variant="info" icon="chevron-left">Go Back</button-renderer>
       </p>
     </div>
   </div>

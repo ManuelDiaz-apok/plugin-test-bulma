@@ -1,8 +1,8 @@
 <template>
     <div>
-        <layout-renderer>
-            Dashboard
-        </layout-renderer>
+      <layout-renderer>
+        Dashboard
+      </layout-renderer>
     </div>
 </template>
 

@@ -1,4 +1,5 @@
 import Vue from "vue";
+import axios from 'axios';
 import * as networkFunctions from './networkFunctions'
 
 export const executeRequest = (url, params, method) => {
@@ -6,16 +7,16 @@ export const executeRequest = (url, params, method) => {
     let promise;
     switch (reqMethod) {
         case "get":
-            promise = Vue.http.get(url, params);
+            promise = axios.get(url, params);
             break;
         case "post":
-            promise = Vue.http.post(url, params);
+            promise = axios.post(url, params);
             break;
         case "put":
-            promise = Vue.http.put(url, params);
+            promise = axios.put(url, params);
             break;
         case "delete":
-            promise = Vue.http.delete(url, params);
+            promise = axios.delete(url, params);
             break;
     }
     return promise.then(response => response.body);
