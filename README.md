@@ -1,19 +1,3 @@
 # plugin_test_bulma
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## En el main.js esta la configuracion del "servidor" de mirage.js y en server.post la configuración del post request
