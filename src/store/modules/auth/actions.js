@@ -1,7 +1,7 @@
+import vue from 'vue';
 import Cookies from 'js-cookie';
 import constants from '@/config/constants';
 import { GET_LOGGED_USER, LOGIN_USER, LOGOUT_USER } from './types';
-import {executeVuexRequest} from '@/tests/unit/networkFunctions'
 
 /**
  * Login function via API REST
@@ -12,24 +12,14 @@ import {executeVuexRequest} from '@/tests/unit/networkFunctions'
  * @param user.password {String} - User's password for log in
  */
 export const doLogin = (context, { username, password }) => {
-    const loginData = {
-        email: username,
-        password,
-        grant_type: 'password',
-        client_id: constants.CLIENT_ID,
-        client_secret: constants.CLIENT_SECRET,
-    };
-
-  executeVuexRequest(context, LOGIN_USER, 'login', loginData, 'post')
-     .then(response => {
-       Cookies.set(constants.SESSION_COOKIE, response.access_token);
-       context.dispatch('getUser');
-     })
-     .catch(error => {
-         if (error.status === 401) {
-         context.dispatch('messages/setFields', { username: error.body.message }, { root: true });
-       }
-     });
+  const loginData = {
+    email: username,
+    password,
+    grant_type: 'password',
+    client_id: constants.CLIENT_ID,
+    client_secret: constants.CLIENT_SECRET,
+  };
+  return vue.$rest.executeVuexRequest(context, LOGIN_USER, 'login', loginData, 'post')
 };
 
 /**
@@ -38,8 +28,7 @@ export const doLogin = (context, { username, password }) => {
  * @param context {Object}- Vuex context Object
  * @returns {Promise}
  */
-export const getUser = (context) => executeVuexRequest(context, GET_LOGGED_USER, 'profile');
-
+export const getUser = (context) => vue.$rest.executeVuexRequest(context, GET_LOGGED_USER, 'profile');
 /**
  *Method that removes session cookie and logs out an user
  * @function logout

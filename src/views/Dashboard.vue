@@ -1,17 +1,16 @@
 <template>
-    <div>
-      <layout-renderer>
-        Dashboard
-      </layout-renderer>
-    </div>
+  <dashboard-renderer :sample="true"/>
 </template>
 
 <script>
-export default {
-    name: 'Dashboard',
-}
+
+  export default {
+    name: "Dashboard",
+  }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+  .dashboard-container {
+    padding: 12px;
+  }
 </style>

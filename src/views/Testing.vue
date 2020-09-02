@@ -1,69 +1,27 @@
 <template>
-    <div id="login-container">
-        <div class="column">
-            <div class="card">
-                <div class="card-content">
-                    <table-renderer
-                        :allow-pagination="true"
-                    />
-                </div>
-            </div>
-        </div>
+    <div class="columns">
+
+
     </div>
 </template>
 
 <script>
-    import { mapState, mapActions } from 'vuex';
-
+    import axios from 'axios'
     export default {
-        name: 'Login',
+        name: "Testing",
+
         data() {
             return {
-                user: {
-                    username: null,
-                    password: null
-                },
+                instruments: [],
+            }
+        },
 
-            };
-        },
-        computed: {
-            ...mapState('auth', ['loading']),
-            ...mapState('messages', ['fields']),
-        },
-        methods: {
-            ...mapActions('auth', ['doLogin']),
-            doSubmit() {
-                this.doLogin({
-                    username: this.user.username,
-                    password: this.user.password
+        created() {
+            axios.get("/api/instruments")
+                .then(response => {
+                    this.instruments = response.data.instruments
                 })
-            }
-        },
-    };
-</script>
 
-<style lang="scss">
-    #login-container {
-        min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        & > .column {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            max-width: 425px;
-            width: 425px;
-            .card {
-                width: 100%;
-            }
-            .card-content {
-                padding: 1em;
-                width: 100%;
-            }
-            & > .field {
-                width: 100%;
-            }
-        }
+        },
     }
-</style>
+</script>

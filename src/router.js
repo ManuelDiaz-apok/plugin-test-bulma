@@ -30,7 +30,7 @@ const router = new Router({
         },
         {
             path: "/admin",
-            component: () => import(/* webpackChunkName: "admin-layout" */ "@apok/admin-components-bulma/components/Layout" ),
+            component: () => import(/* webpackChunkName: "admin-layout" */ "./views/MainLayout" ),
             meta: { requiresAuth: true },
             children: [
                 {
@@ -40,31 +40,34 @@ const router = new Router({
                 },
                 ...childRoutes,
                 {
+                  path: '/about',
+                  name: 'About',
+                  component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+                },
+                {
                     path: "*",
-                    component: () => import(/* webpackChunkName: "not-found" */ "./views/NotFoundPage")
+                    redirect: { name: 'NotFoundPage' }
                 }
             ]
         },
         {
-            path: '/about',
-            name: 'about',
-            // route level code-splitting
-            // this generates a separate chunk (about.[hash].js) for this route
-            // which is lazy-loaded when the route is visited.
-            component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-        },
-        {
             path: "*",
+            name: 'NotFoundPage',
             component: () => import(/* webpackChunkName: "not-found" */ "./views/NotFoundPage")
         }
     ]
-})
+});
+
+/* This is a auth validation that checks if the user is logged in
+in order to allow access to the admin page and its children. You can
+always implement your own auth method, however, this one serves it's
+purpose */
 
 router.beforeEach((to, from, next) => {
     if (to.path.startsWith("/admin")) {
         const token = Cookies.get(constants.SESSION_COOKIE);
         if (!token) {
-            next({ name: "Login" });
+            //next({ name: "Login" });
         }
     }
     next();

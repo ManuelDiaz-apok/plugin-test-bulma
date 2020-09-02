@@ -1,1 +1,10 @@
 @import "./_variables";
+
+@import '~@apok/admin-components-bulma/assets/components';
+@import '~bulma/bulma';
+@import '~buefy/dist/buefy.css';
+
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons+Outlined');
+$mdi-font-path: '~@mdi/font/fonts';
+@import '~@mdi/font/scss/materialdesignicons';
