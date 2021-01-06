@@ -23,7 +23,7 @@
     "apollo-client": "^2.5.1",
     "apollo-link-error": "^1.1.10",
     "apollo-link-http": "^1.5.14",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bootstrap": "^4.4.1",
     "buefy": "^0.9.0",
     "bulma": "^0.9.0",
