@@ -46,8 +46,8 @@
     "vuex-i18n": "^1.11.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-unit-jest": "^4.4.1",
-    "@vue/cli-service": "~4.3.0",
+    "@vue/cli-plugin-unit-jest": "^5.0.8",
+    "@vue/cli-service": "~5.0.8",
     "@vue/test-utils": "^1.0.3",
     "miragejs": "^0.1.40",
     "node-sass": "^4.9.0",
